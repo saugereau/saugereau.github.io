@@ -1,57 +1,151 @@
 <!DOCTYPE html>
-<html class="fuelux" lang="en">
+<html>
   <head>
-    <meta charset="utf-8">
-    <title>{{ page.title }}</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link href="http://fuelcdn.com/fuelux/2.2/css/fuelux.css" rel="stylesheet" /> 
-	<link href="http://fuelcdn.com/fuelux/2.2/css/fuelux-responsive.css" rel="stylesheet" />
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js" type="text/javascript"></script>
-	<script src="http://fuelcdn.com/fuelux/2.2/loader.min.js" type="text/javascript"></script>
-    <link href="/css/docs.css" rel="stylesheet">
-    <link href="/js/google-code-prettify/prettify.css" rel="stylesheet">	
-	<link rel="shortcut icon" href="/img/favicon.png">
+    <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
+
+    <meta name="author" content="{{ site.name }}" />
+    <meta name="description" content="{{ site.description }}">
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!--<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />-->
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/bootstrap/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/bootstrap/css/sticky-footer-navbar.css" />
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/base.css" />
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/sidr/stylesheets/jquery.sidr.dark.css" />
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
+    <script type="text/javascript" src="/assets/jquery/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="/assets/bootstrap/js/bootstrap.min.js"></script>
+
+
   </head>
-  <body data-spy="scroll" data-target=".subnav" data-offset="50">
-	{% include navigation.html %}  
-	<div class="container">	
-		<div class="marketing">
-		{{ content }}
-		</div>		 
-	 </div>   
-	{% include footer.html %}
-    <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>    
-    
-	<script src="/js/custom.js" type="text/javascript"></script>	
-	
-	<script type="text/javascript">
-		/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-		var disqus_shortname = 'saugereaugithubio'; // required: replace example with your forum shortname
-        var disqus_developer = 1;
-        /* * * DON'T EDIT BELOW THIS LINE * * */
-		(function () {
-			var s = document.createElement('script'); s.async = true;
-			s.type = 'text/javascript';
-			s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
-			(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-		}());
-	</script>
-	
-	<!-- Google Analytics -->
-	<script type="text/javascript">
 
-	  var _gaq = _gaq || [];
-	  _gaq.push(['_setAccount', 'UA-29830549-1']);
-	  _gaq.push(['_trackPageview']);
+  <body class="article tutorial">
 
-	  (function() {
-		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-	  })();
+  <div class="metabar">
+      <div class="metabar-block pull-right">
+          <div class="metabar-text">
+              <a href="http://twitter.com/saugereau33" class="btn btn-default btn-transparent js-social-links" style="font-size:15px"><i class="fa fa-twitter"></i></a>
+              <a href="http://feeds.feedburner.com/juristrumpflohner" class="btn btn-default btn-transparent js-rss-btn" style="color:#b3b3b1">
+                  <i class="fa fa-rss"></i> RSS
+              </a>
+          </div>
+      </div>
+  </div>
 
-	</script>	
+  <div class="nav-button js-menu-button">
+      <a id="sidebar-button" href="#sidr"><i class="fa fa-bars"></i></a>
+  </div>
+
+  <div id="sidr" style="display:none">
+      <p class="profile">
+
+        <span class="bio">
+          Java architect, Developer, Blogger
+        </span>
+
+
+
+      </p>
+      <p>
+          {% if site.footer-links.dribbble %}<a href="http://dribbble.com/{{ site.footer-links.dribbble }}">{% include svg-icons/dribbble.html %}</a>{% endif %}
+          {% if site.footer-links.email %}<a href="mailto: {{ site.footer-links.email }}">{% include svg-icons/email.html %}</a>{% endif %}
+          {% if site.footer-links.facebook %}<a href="http://facebook.com/{{ site.footer-links.facebook }}">{% include svg-icons/facebook.html %}</a>{% endif %}
+          {% if site.footer-links.flickr %}<a href="http://flickr.com/{{ site.footer-links.flickr }}">{% include svg-icons/flickr.html %}</a>{% endif %}
+          {% if site.footer-links.github %}<a href="http://github.com/{{ site.footer-links.github }}">{% include svg-icons/github.html %}</a>{% endif %}
+          {% if site.footer-links.instagram %}<a href="http://instagram.com/{{ site.footer-links.instagram }}">{% include svg-icons/instagram.html %}</a>{% endif %}
+          {% if site.footer-links.linkedin %}<a href="http://linkedin.com/in/{{ site.footer-links.linkedin }}">{% include svg-icons/linkedin.html %}</a>{% endif %}
+          {% if site.footer-links.pinterest %}<a href="http://pinterest.com/{{ site.footer-links.pinterest }}">{% include svg-icons/pinterest.html %}</a>{% endif %}
+          {% if site.footer-links.rss %}<a href="{{ site.baseurl }}/feed.xml">{% include svg-icons/rss.html %}</a>{% endif %}
+          {% if site.footer-links.twitter %}<a href="http://twitter.com/{{ site.footer-links.twitter }}">{% include svg-icons/twitter.html %}</a>{% endif %}
+          {% if site.footer-links.stackoverflow %}<a href="http://stackoverflow.com/{{ site.footer-links.stackoverflow }}">{% include svg-icons/stackoverflow.html %}</a>{% endif %}
+
+
+      </p>
+
+      <ul class="site-nav">
+          <li>
+              <a href="{{ site.baseurl }}">
+                  <i class="glyphicon glyphicon-home"></i> Blog Home
+              </a>
+          </li>
+          <li>
+              <a href="/tags">
+                  <i class="fa fa-tags"></i> Tags
+              </a>
+          </li>
+          <li>
+              <a href="/about">
+                  <i class="glyphicon glyphicon-user"></i> About me
+              </a>
+          </li>
+
+      </ul>
+
+  </div>
+
+
+  <div class="js-click-region">
+      {{ content }}
+  </div>
+
+  <script src="/assets/sidr/jquery.sidr.min.js"></script>
+  <script>
+
+
+      $(function(){
+
+
+
+          $('#sidebar-button').sidr();
+
+          $('#sidebar-button').tooltip({
+              title: "Click me",
+              placement: 'right'
+          });
+
+
+
+
+
+          $('#sidebar-button').click(function(){
+              if($('.toc').is(':visible') === true){
+                  $('.toc').fadeOut();
+              }else{
+                  $('.toc').fadeIn();
+              }
+
+              try {
+                  ga('send', 'event', 'button', 'click', 'menu-button');
+              } catch(err){}
+          });
+
+          $('.js-rss-btn').click(function(){
+              try {
+                  ga('send', 'event', 'button', 'click', 'rss-button');
+              } catch(err){}
+          });
+
+
+
+      });
+
+
+
+      //prettyPrint();
+  </script>
+
+  {% include analytics.html %}
+  {% include disqus_comment_count %}
   </body>
 </html>

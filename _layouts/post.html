@@ -1,9 +1,93 @@
 ---
 layout: default
 ---
+{% if page.postimg != nil and page.show_img_in_detail == true and page.coverimage == true %}
+  <div class="front-bg">
+    <div class="image-cover-wrap">
+      <img class="front-image" src="{{page.postimg}}" />
+    </div>
+  </div>
+{% endif %}
+<div class="container">
+  <div class="row">
+    {% if page.postimg != nil and page.show_img_in_detail == true and page.coverimage == true %}
+    <section class="main-content post instapaper_body" style="margin-top:20px">
+    {% else %}
+    <section class="main-content post instapaper_body">
+    {% endif %}
+      <article class="row">
+        {% if page.postimg != nil and page.show_img_in_detail == true and (page.coverimage == false or page.coverimage == nil) %}
+          <div class="col-sm-12 col-lg-12 post-image" style="margin-bottom:15px; text-align:center">
+              <img src="{{page.postimg}}" style="width:100%" />
+          </div>
+        {% endif %}
+        {% if page.postheadline != nil %}
+          <div class="col-sm-12 col-lg-12 post-headerline">
+            <p class="title">{{ page.postheadline }}</p>
+          </div>
+        {% endif %}
+        <div class="post-meta kindle-ignore">
+          <span class="reading-time"></span>
+        </div>
+        <h1 class="article-title">
+          {{ page.title }}
+        </h1>
+        <h2 class="post-subtitle">
+          {{ page.lead }}
+        </h2>
+        <div class="post-author-headline kindle-ignore">
+            <div class="row">
+                <h5><strong>{{ page.date | date: "%B %e, %Y" }} <small>. {{ page.category }} . <a href="{{ site.baseurl }}{{ page.url }}#disqus_thread" data-disqus-identifier="{{ page.url }}">Comments</a></small></strong>
+            </h5>
+            </div>
+            <div class="row">
+                {% unless page.tags == empty %}
+                <div class="tag-list">
+                    <strong>Tags:</strong>
+                    {% for tag in page.tags %}
+                    <a href="/blog/tags#{{tag}}" class="post-tag">{{ tag }}</a>
+                    {% endfor %}
+                </div>
+                {% endunless %}
 
-<div class="content">    
-	{% include post_header.html %}
-    {{ content }}		
+            </div>
+            <div class="row">
+                <a href="https://twitter.com/share" class="twitter-share-button" data-via="saugereau33" data-size="large">Tweet</a>
+                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+
+                <!-- Place this tag where you want the +1 button to render. -->
+                <div class="g-plusone"></div>
+
+                <!-- Place this tag after the last +1 button tag. -->
+                <script type="text/javascript">
+                    (function() {
+                        var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+                        po.src = 'https://apis.google.com/js/plusone.js';
+                        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+                    })();
+                </script>
+
+            </div>
+
+        </div>
+        <div class="row article-body">
+
+          {{ content }}
+
+
+        </div>
+
+
+
+      </article>
+    </section>
+  </div>
 </div>
-    
+<section class="article-footer">
+  <div class="row article-comments">
+    <hr>
+      {% include disqus.html disqus_identifier=page.disqus_identifier %}
+  </div>
+</section>
+
