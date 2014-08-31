@@ -37,7 +37,7 @@ layout: default
 
                     <div class="post-item-meta">
                         <i class="glyphicon glyphicon-calendar"></i> {{ post.date | date: "%B %e, %Y" }}
-                        | <a href="{{ post.url }}#disqus_thread" data-disqus-identifier="{{ post.url }}" ><i class="glyphicon glyphicon-comment"></i></a>
+                        | <i class="glyphicon glyphicon-comment"></i><a href="{{ post.url }}#disqus_thread"  ></a>
                         | <span>
                         {% for tag in post.tags %}
                         <a href="/tags/{{tag}}">
@@ -71,6 +71,12 @@ layout: default
                         fjs.parentNode.insertBefore(js, fjs);
                     }
                 }(document, "script", "twitter-wjs");</script>
+            </div>
+            <div>
+
+
+
+
             </div>
         </article>
     </section>
