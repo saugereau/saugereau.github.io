@@ -36,9 +36,9 @@
       <div class="metabar-block pull-right">
           <div class="metabar-text">
               <a href="http://twitter.com/saugereau33" class="btn btn-default btn-transparent js-social-links" style="font-size:15px"><i class="fa fa-twitter"></i></a>
-              <a href="http://feeds.feedburner.com/juristrumpflohner" class="btn btn-default btn-transparent js-rss-btn" style="color:#b3b3b1">
+              <!--<a href="http://feeds.feedburner.com/juristrumpflohner" class="btn btn-default btn-transparent js-rss-btn" style="color:#b3b3b1">
                   <i class="fa fa-rss"></i> RSS
-              </a>
+              </a>-->
           </div>
       </div>
   </div>
@@ -115,7 +115,10 @@
           });
 
 
-
+          $('.js-click-region').click(function(){
+              $('.toc').fadeIn();
+              $.sidr('close');
+          });
 
 
           $('#sidebar-button').click(function(){
@@ -146,6 +149,7 @@
   </script>
 
   {% include analytics.html %}
-  {% include disqus_comment_count %}
+  {% include disqus_comment_count.html %}
+  {% include footer.html %}
   </body>
 </html>
