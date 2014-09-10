@@ -26,6 +26,8 @@
     <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
     <script type="text/javascript" src="/assets/jquery/jquery-1.11.1.min.js"></script>
     <script type="text/javascript" src="/assets/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/assets/js/prettify.js"></script>
+
 
 
   </head>
@@ -102,11 +104,15 @@
   <script src="/assets/sidr/jquery.sidr.min.js"></script>
   <script>
 
+      //add needed class in pre tag for prettyprint
+      $("pre").each(function(){
+          var el = $(this);
+          if(el.hasClass("nohighlight") === false){
+              el.addClass("prettyprint");
+          }
+      });
 
       $(function(){
-
-
-
           $('#sidebar-button').sidr();
 
           $('#sidebar-button').tooltip({
@@ -142,10 +148,7 @@
 
 
       });
-
-
-
-      //prettyPrint();
+      prettyPrint();
   </script>
 
   {% include analytics.html %}

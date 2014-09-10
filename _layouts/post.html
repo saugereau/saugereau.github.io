@@ -1,41 +1,20 @@
 ---
 layout: default
 ---
-{% if page.postimg != nil and page.show_img_in_detail == true and page.coverimage == true %}
-  <div class="front-bg">
-    <div class="image-cover-wrap">
-      <img class="front-image" src="{{page.postimg}}" />
-    </div>
-  </div>
-{% endif %}
+
 <div class="container">
   <div class="row">
-    {% if page.postimg != nil and page.show_img_in_detail == true and page.coverimage == true %}
-    <section class="main-content post instapaper_body" style="margin-top:20px">
-    {% else %}
-    <section class="main-content post instapaper_body">
-    {% endif %}
+
+    <section class="main-content post">
+
       <article class="row">
-        {% if page.postimg != nil and page.show_img_in_detail == true and (page.coverimage == false or page.coverimage == nil) %}
-          <div class="col-sm-12 col-lg-12 post-image" style="margin-bottom:15px; text-align:center">
-              <img src="{{page.postimg}}" style="width:100%" />
-          </div>
-        {% endif %}
-        {% if page.postheadline != nil %}
-          <div class="col-sm-12 col-lg-12 post-headerline">
-            <p class="title">{{ page.postheadline }}</p>
-          </div>
-        {% endif %}
-        <div class="post-meta kindle-ignore">
-          <span class="reading-time"></span>
-        </div>
+
+
         <h1 class="article-title">
           {{ page.title }}
         </h1>
-        <h2 class="post-subtitle">
-          {{ page.lead }}
-        </h2>
-        <div class="post-author-headline kindle-ignore">
+
+        <div class="post-author-headline">
             <div class="row">
                 <h5><strong>{{ page.date | date: "%B %e, %Y" }} <small>. {{ page.category }} . <a href="{{ page.url }}#disqus_thread" >Comments</a></small></strong>
             </h5>
