@@ -4,7 +4,8 @@ layout: default
 
 <div class="front-bg">
     <div class="image-cover-wrap" style="position:absolute;">
-        <img class="front-image" src="/assets/images/codebg-blurred-trans.png">
+        <!--<img class="front-image" src="/assets/images/codebg-blurred-trans.png">-->
+        <img class="front-image" src="/assets/images/header_top.png">
     </div>
     <div class="layout-foreground">
         <header class="hero hero-home layout-single-column">
@@ -46,6 +47,9 @@ layout: default
                            {% endfor %}
                         </span>
                     </div>
+                    <div class="post-item-meta">
+                         <span>Category : {{post.category}} </span>
+                    </div>
                 </div>
                 {% endfor %}
 
@@ -57,29 +61,20 @@ layout: default
 
         <article class="col-md-6 col-lg-6 col-sm-6">
             <div style="margin-top: 30px; width: 380px" class="pull-right">
+                <div class=""row><h3>Tag Cloud</h3></div>
 
-                {% for tag in site.tags %}
-                {% assign low = 15 %}
-                {% assign mid = 35 %}
+                <div class="row tag-cloud">
+                    {% for tag in site.tags %}
+                      <span class="tag-cloud-{{ tag | last | size | times: 10 | divided_by: site.tags.size }}">
+                        <a href="tags/{{ tag | first | slugize] }}">{{ tag | first }}</a>
+                      </span>
+                    {% endfor %}
+                </div>
 
-                {% if tag[1].size <= low %}
-                <a href="#{{ tag[0] }}" class="btn btn-default tags" > {{ tag[0] }} ({{ tag[1].size }})</a>
-
-                {% else if tag[1].size > low && tag[1].size <= mid %}
-                <a href="#{{ tag[0] }}" class="btn btn-default tags" style="font-weight:bold; font-size:10px">{{ tag[0] }} ({{ tag[1].size }})</a>
-
-                {% else if tag[1].size > mid %}
-                <a href="#{{ tag[0] }}" class="btn btn-default tags" style="font-weight:bold; font-size:15px">{{ tag[0] }} ({{ tag[1].size }})</a>
-                {% endif %}
-                {% endfor %}
-
-
-            </div>
-
-            <div style="margin-top: 30px; width: 380px" class="pull-right">
-
+                <div class=""row><h3>Twitter</h3></div>
                 <a class="twitter-timeline" href="https://twitter.com/saugereau33" data-widget-id="504637027644485633">Tweets
                     de @saugereau33</a>
+
                 <script>!function (d, s, id) {
                     var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
                     if (!d.getElementById(id)) {
@@ -89,6 +84,9 @@ layout: default
                         fjs.parentNode.insertBefore(js, fjs);
                     }
                 }(document, "script", "twitter-wjs");</script>
+
+
+
             </div>
 
         </article>

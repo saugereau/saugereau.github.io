@@ -534,7 +534,7 @@
     margin: 0 auto;
   }
 
-  .article-body > p:nth-child(4) {
+  /*.article-body > p:nth-child(4) {
     font-size:24px;
     display: inline;
   }
@@ -548,7 +548,7 @@
   .article-body > img:nth-child(5) {
     clear:both;
     padding-top:20px;
-  }
+  }*/
 
   .article-body > p{
     margin-bottom:25px;
@@ -953,13 +953,12 @@ ol.linenums li {
 
 
   /*.author-inline-bio {
-    /*border-top: 4px solid #008CCC;*/
     line-height: 1.4;
     color: #666665;
     width: 100%;
-  }*/
+  }
 
-  /*.author-inline-bio .bio-author {
+  .author-inline-bio .bio-author {
     padding-top: 10px;
     font-weight: bold;
     font-size: 23px;
@@ -969,7 +968,7 @@ ol.linenums li {
   .author-inline-bio .bio-content {
     font-style: italic;
     font-size: 18px;
-  }*/
+  }
 
   .author-inline-bio img{
     border: 0;
@@ -977,13 +976,35 @@ ol.linenums li {
 
   .author-bio-footer hr {
     display: none;
-  }
+  }*/
 
   .tag-list {
     padding-top: 10px;
     font-size:18px;
   }
 
+  .tag-cloud {
+      font-size:14px;
+      padding: 5px 0px 20px;
+  }
+
+
+    /* tag cloud */
+    .tag-cloud-0 { font-size: 100%; }
+    .tag-cloud-1 { font-size: 110%; }
+    .tag-cloud-2 { font-size: 110%; font-weight: bold; }
+    .tag-cloud-3 { font-size: 140%; }
+    .tag-cloud-4 { font-size: 140%; font-weight: bold; }
+    .tag-cloud-5 { font-size: 160%; }
+    .tag-cloud-6 { font-size: 160%; font-weight: bold; }
+    .tag-cloud-7 { font-size: 180%; }
+    .tag-cloud-8 { font-size: 180%; font-weight: bold; }
+    .tag-cloud-9 { font-size: 200%;
+        font-weight: bold;
+        font-style: italic;
+    }
+    .tag-cloud-10 { font-size: 160%; }
+    /* end tag cloud */
 }
 
 

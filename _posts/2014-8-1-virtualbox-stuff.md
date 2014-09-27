@@ -1,11 +1,8 @@
 ---
 layout: post
 title: VirtualBox Stuff
-category: Coding
+category: Tools
 tags: virtualbox
-year: 2014
-month: 8
-day: 1
 summary: How to resize your vdi files, some issues fix ...
 ---
 
@@ -19,6 +16,7 @@ Cannot register the hard disk 'C:\....' {0f1241a7-fd33-42b9-9cc3-cf6d3fbca470} b
 
 This error frequently happen when when you duplicate a virtual hdd (copy/paste of vdi file) and trying to create a new virtual machine with this vdi file.
 To avoid this, there is multiple solutions :
+
 - Instead of doing a copy/paste, you could clone the vdi and the UUID of new file will be changed
 
 ```
@@ -37,8 +35,10 @@ C:\Program Files\Oracle\VirtualBox\VBoxManage internalcommands sethduuid pasted_
 
 When you create for the first time your vdi file, you have to choose some options about.
 VirtualBox supports two types of image files:
+
 - A dynamically allocated file will only grow in size when the guest actually stores data on its virtual hard disk. It will therefore initially be small on the host hard drive and only later grow to the size specified as it is filled with data.
 - A fixed-size file will immediately occupy the file specified, even if only a fraction of the virtual hard disk space is actually in use. While occupying much more space, a fixed-size file incurs less overhead and is therefore slightly faster than a dynamically allocated file.
+
 Whatever your choice, it happens that your virtual machine need more space.
 
 ```

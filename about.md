@@ -13,6 +13,7 @@ I live in Bordeaux, France and I worked mainly in IT Services & Software Enginee
 I always liked learning new things, and I follow regularly some MOOC on coursera.
 
 At first, I started this blog to bring a dish all notes that I have written on different file, and I think later that it could be useful too for other people.
+This is also an opportunity to improve my writing by writing in english instead of my native language (french).
 So I'm not a specialist of web design (I'am still working on it), and this blog design is quite simple and uncluttered.
 
 I'am currently working on this technology, so the blog content could be reflect this topics :

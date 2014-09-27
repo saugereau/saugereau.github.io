@@ -1,11 +1,8 @@
 ---
 layout: post
 title: Install Jekyll on windows
-category: Coding
-tags: Jekyll
-year: 2014
-month: 8
-day: 1
+category: Tools
+tags: jekyll
 summary: Some guidelines to install ruby/pyhton and jekyll on windows OS
 ---
 
@@ -20,7 +17,8 @@ C:\Users\yourusername>ruby -v
 ruby 2.0.0p481 (2014-05-08) [x64-mingw32]
 ```
 
-RubyGems is a package manager which became part of the standard library in Ruby 1.9. It allows developers to search, install and build gems, among other features. All of this is done by using the gem command-line utility
+RubyGems is a package manager which became part of the standard library in Ruby 1.9. It allows developers to search, install and build gems, among other features. All of this is done by using the gem command-line utility.
+
 A gem is a packaged Ruby application or library. It has a name (e.g. rake) and a version (e.g. 0.4.16)
 
 ```
