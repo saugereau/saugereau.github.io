@@ -39,7 +39,7 @@ layout: default
 
                     <div class="post-item-meta">
                         <span><i class="glyphicon glyphicon-calendar"></i> {{ post.date | date: "%B %e, %Y" }} </span>
-                        <span><i class="glyphicon glyphicon-comment"></i><a href="{{ post.url }}#disqus_thread"  ></a> </span>
+                        <span><i class="glyphicon glyphicon-comment"></i><a href="{{ post.url }}#disqus_thread" data-disqus-identifier="{{ post.url }}"></a> </span>
                         <span> <i class="glyphicon glyphicon-tags"></i>&nbsp;
                             {% for tag in post.tags %}
                             <a href="/tags/{{tag}}" class="btn btn-default tags" >{{tag}}</a>

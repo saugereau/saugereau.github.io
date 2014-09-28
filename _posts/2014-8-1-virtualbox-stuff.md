@@ -86,3 +86,4 @@ sudo reboot
 
 (only works for ATI graphics cards ??)
 The same can be done from the recovery mode (after enabling networking), if your Ubuntu completly refuses to enter anything but recovery mode.
+

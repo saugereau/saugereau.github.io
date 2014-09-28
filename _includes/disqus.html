@@ -1,9 +1,10 @@
 {% if site.disqus %}
 <div class="comments">
-	<div id="disqus_thread"></div>
+	<div id="disqus_thread" data-disqus-identifier="{{ page.url }}"></div>
 	<script type="text/javascript">
     
 	    var disqus_shortname = '{{ site.disqus }}';
+        var disqus_identifier = '{{ page.url }}';
 
 	    (function() {
 	        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
