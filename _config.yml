@@ -70,6 +70,7 @@ sass:
 gems:
   - jemoji # Emoji please!
   - jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
+  - jekyll-lunr-js-search
 
 # Exclude these files from your production _site
 exclude:
@@ -77,3 +78,10 @@ exclude:
     - Gemfile.lock
     - LICENSE
     - README.md
+
+# jekyll-lunr-js-search parameters
+exclude_from_search: true
+lunr_search:
+  excludes: [feed.xml, sitemap.xml, 404.html, index.html, about/, tags/index.html]
+  stopwords: "assets/stopwords/stop-words_english_6_en.txt"
+  min_length: 3

@@ -26,6 +26,27 @@ layout: default
 
             <div class="post-list">
 
+                <section id="search-results" style="display: none;">
+                    <p>Search results</p>
+                    <div class="entries">
+                    </div>
+                </section>
+
+                {% raw %}
+                <script id="search-results-template" type="text/mustache">
+                  {{#entries}}
+                    <article>
+                      <h3>
+                        {{#date}}<small><time datetime="{{pubdate}}" pubdate>{{displaydate}}</time></small>{{/date}}
+                        <a href="{{url}}">{{title}}</a>
+                      </h3>
+                    </article>
+                  {{/entries}}
+                </script>
+                {% endraw %}
+
+
+
                 {% for post in site.posts limit:20 %}
                 <div class="row post-item">
                     <h3 class="post-item-title">
@@ -61,7 +82,39 @@ layout: default
 
         <article class="col-md-6 col-lg-6 col-sm-6">
             <div style="margin-top: 30px; width: 380px" class="pull-right">
-                <div class=""row><h3>Tag Cloud</h3></div>
+                <!--<div class="row"><h3>Search post content</h3></div>-->
+                <!--<div class="row form-group">
+                    <form action="/search" method="get" class="input-group">
+                        <input type="text" id="search-query" class="form-control search-query" name="q" placeholder="Search" autocomplete="off">
+                        <button class="btn btn-default" type="submit">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                    </form>
+                </div>-->
+
+                <!--
+                <div class="col-lg-6">
+                    <div class="input-group">
+                        <input type="text" class="form-control">
+                      <span class="input-group-btn">
+                        <button class="btn btn-default" type="button">Go!</button>
+                      </span>
+                    </div>
+                </div>
+                -->
+
+                <div class="row">
+
+                    <form action="/search" method="get" class="input-group">
+                        <input type="text" id="search-query" class="form-control" name="q" placeholder="Search" autocomplete="off">
+                      <span class="input-group-btn">
+                        <button class="btn btn-default" type="button">Go!</button>
+                      </span>
+                    </form>
+
+                </div>
+
+                <div class="row"><h3>Tag Cloud</h3></div>
 
                 <div class="row tag-cloud">
                     {% for tag in site.tags %}
@@ -71,7 +124,7 @@ layout: default
                     {% endfor %}
                 </div>
 
-                <div class=""row><h3>Twitter</h3></div>
+                <div class="row"><h3>Twitter</h3></div>
                 <a class="twitter-timeline" href="https://twitter.com/saugereau33" data-widget-id="504637027644485633">Tweets
                     de @saugereau33</a>
 
@@ -92,24 +145,3 @@ layout: default
         </article>
     </section>
 </div>
-
-<!--
-<div class="posts">
-  {% for post in site.posts %}
-    <article class="post">
-
-      <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
-
-      <div class="entry">
-        {{ post.content | truncatewords:40}}
-      </div>
-        <p>
-            <span class="glyphicon glyphicon-calendar"></span> {{ post.date | date: "%B %e, %Y" }}
-            <a href="saugereau.github.com{{ post.url }}#disqus_thread" data-disqus-identifier="{{ post.url }}" ><span class="glyphicon glyphicon-comment"></span></a>
-            <span class="glyphicon glyphicon-tags"/> Tags :{% for tag in post.tags %} <a href="/tags/{{ tag }}" rel="tooltip" title="View posts tagged with &quot;{{ tag }}&quot;"><span class="label label-info">{{ tag }}</span></a>  {% if forloop.last != true %} {% endif %} {% endfor %}
-        </p>
-      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
-    </article>
-  {% endfor %}
-</div>
--->
