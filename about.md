@@ -29,4 +29,4 @@ You can also find me on
 
 - on [Twitter](http://twitter.com/saugereau33)
 - on [GitHub](http://github.com/saugereau)
-- on [Linkedin](http://fr.linkedin.com/pub/sebastien-augereau/46/ba5/98a)</li>
+- on [Linkedin](http://fr.linkedin.com/pub/sebastien-augereau/46/ba5/98a)

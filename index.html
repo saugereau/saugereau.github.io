@@ -26,6 +26,27 @@ layout: default
 
             <div class="post-list">
 
+                <section id="search-results" style="display: none;">
+                    <p>Search results</p>
+                    <div class="entries">
+                    </div>
+                </section>
+
+                {% raw %}
+                <script id="search-results-template" type="text/mustache">
+                  {{#entries}}
+                    <article>
+                      <h3>
+                        {{#date}}<small><time datetime="{{pubdate}}" pubdate>{{displaydate}}</time></small>{{/date}}
+                        <a href="{{url}}">{{title}}</a>
+                      </h3>
+                    </article>
+                  {{/entries}}
+                </script>
+                {% endraw %}
+
+
+
                 {% for post in site.posts limit:20 %}
                 <div class="row post-item">
                     <h3 class="post-item-title">
@@ -61,18 +82,49 @@ layout: default
 
         <article class="col-md-6 col-lg-6 col-sm-6">
             <div style="margin-top: 30px; width: 380px" class="pull-right">
-                <div class=""row><h3>Tag Cloud</h3></div>
+                <!--<div class="row"><h3>Search post content</h3></div>-->
+                <!--<div class="row form-group">
+                    <form action="/search" method="get" class="input-group">
+                        <input type="text" id="search-query" class="form-control search-query" name="q" placeholder="Search" autocomplete="off">
+                        <button class="btn btn-default" type="submit">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                    </form>
+                </div>-->
+
+                <!--
+                <div class="col-lg-6">
+                    <div class="input-group">
+                        <input type="text" class="form-control">
+                      <span class="input-group-btn">
+                        <button class="btn btn-default" type="button">Go!</button>
+                      </span>
+                    </div>
+                </div>
+                -->
+
+                <div class="row">
+
+                    <form action="/search" method="get" class="input-group">
+                        <input type="text" id="search-query" class="form-control" name="q" placeholder="Search" autocomplete="off">
+                      <span class="input-group-btn">
+                        <button class="btn btn-default" type="button">Go!</button>
+                      </span>
+                    </form>
+
+                </div>
+
+                <div class="row"><h3>Tag Cloud</h3></div>
 
                 <div class="row tag-cloud">
                     {% for tag in site.tags %}
                       <span class="tag-cloud-{{ tag | last | size | times: 10 | divided_by: site.tags.size }}">
-                        <!--<a href="blog/tags/#{{ tag | first | slugize] }}" title="{{ tag[1].size }} post">{{ tag | first }}</a>-->
-                          <a href="blog/tags/#{{ tag | first | slugize] }}"  data-toggle="tooltip" data-placement="top" title="" data-original-title="{{ tag[1].size }} posts">{{ tag | first }}</a>
+                        <a href="blog/tags/#{{ tag | first | slugize] }}">{{ tag | first }}</a>
                       </span>
                     {% endfor %}
                 </div>
 
-                <div class=""row><h3>Twitter</h3></div>
+                <div class="row"><h3>Twitter</h3></div>
                 <a class="twitter-timeline" href="https://twitter.com/saugereau33" data-widget-id="504637027644485633">Tweets
                     de @saugereau33</a>
 
