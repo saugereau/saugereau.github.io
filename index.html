@@ -39,10 +39,10 @@ layout: default
 
                     <div class="post-item-meta">
                         <span><i class="glyphicon glyphicon-calendar"></i> {{ post.date | date: "%B %e, %Y" }} </span>
-                        <span><i class="glyphicon glyphicon-comment"></i><a href="{{ post.url }}#disqus_thread" data-disqus-identifier="{{ post.url }}"></a> </span>
+                        <span><i class="glyphicon glyphicon-comment"></i>&nbsp;<a href="{{ post.url }}#disqus_thread" data-disqus-identifier="{{ post.url }}"></a> </span>
                         <span> <i class="glyphicon glyphicon-tags"></i>&nbsp;
                             {% for tag in post.tags %}
-                            <a href="/blog/tags/{{tag}}" class="btn btn-default tags" >{{tag}}</a>
+                            <a href="/blog/tags/#{{tag}}" class="btn btn-default tags" >{{tag}}</a>
                               &nbsp;
                            {% endfor %}
                         </span>
@@ -66,7 +66,8 @@ layout: default
                 <div class="row tag-cloud">
                     {% for tag in site.tags %}
                       <span class="tag-cloud-{{ tag | last | size | times: 10 | divided_by: site.tags.size }}">
-                        <a href="blog/tags/#{{ tag | first | slugize] }}">{{ tag | first }}</a>
+                        <!--<a href="blog/tags/#{{ tag | first | slugize] }}" title="{{ tag[1].size }} post">{{ tag | first }}</a>-->
+                          <a href="blog/tags/#{{ tag | first | slugize] }}"  data-toggle="tooltip" data-placement="top" title="" data-original-title="{{ tag[1].size }} posts">{{ tag | first }}</a>
                       </span>
                     {% endfor %}
                 </div>
@@ -85,31 +86,15 @@ layout: default
                     }
                 }(document, "script", "twitter-wjs");</script>
 
-
-
             </div>
 
         </article>
     </section>
 </div>
 
-<!--
-<div class="posts">
-  {% for post in site.posts %}
-    <article class="post">
+<script>
+    $(function () {
+    $("[data-toggle='tooltip']").tooltip();
+    });
+</script>
 
-      <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
-
-      <div class="entry">
-        {{ post.content | truncatewords:40}}
-      </div>
-        <p>
-            <span class="glyphicon glyphicon-calendar"></span> {{ post.date | date: "%B %e, %Y" }}
-            <a href="saugereau.github.com{{ post.url }}#disqus_thread" data-disqus-identifier="{{ post.url }}" ><span class="glyphicon glyphicon-comment"></span></a>
-            <span class="glyphicon glyphicon-tags"/> Tags :{% for tag in post.tags %} <a href="/tags/{{ tag }}" rel="tooltip" title="View posts tagged with &quot;{{ tag }}&quot;"><span class="label label-info">{{ tag }}</span></a>  {% if forloop.last != true %} {% endif %} {% endfor %}
-        </p>
-      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
-    </article>
-  {% endfor %}
-</div>
--->

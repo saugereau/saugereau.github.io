@@ -17,14 +17,9 @@ avatar:
 
 # Includes an icon in the footer for each username you enter
 footer-links:
-  dribbble: 
   email: sebastien.augereau@gmail.com
-  facebook: 
-  flickr: 
   github: saugereau
-  instagram: 
   linkedin: http://fr.linkedin.com/pub/sebastien-augereau/46/ba5/98a
-  pinterest: 
   rss: tt# just type anything here for a working RSS icon, make sure you set the "url" above!
   twitter: saugereau33
   stackoverflow: # your stackoverflow profile, e.g. "users/50476/bart-kiers"
