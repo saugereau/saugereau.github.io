@@ -145,8 +145,22 @@ layout: default
 </div>
 
 <script>
+
+    <!-- tooltip on tag cloud -->
     $(function () {
     $("[data-toggle='tooltip']").tooltip();
     });
+
+
+    <!-- search -->
+    $(function() {
+        $('#search-query').lunrSearch({
+            index:    'search/search.json',
+            results:  '#search-results',
+            entries:  '.entries',
+            template: '#search-results-template'
+        });
+    });
+
 </script>
 
