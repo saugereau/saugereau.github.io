@@ -119,7 +119,7 @@ layout: default
                 <div class="row tag-cloud">
                     {% for tag in site.tags %}
                       <span class="tag-cloud-{{ tag | last | size | times: 10 | divided_by: site.tags.size }}">
-                        <a href="blog/tags/#{{ tag | first | slugize] }}">{{ tag | first }}</a>
+                        <a href="blog/tags/#{{ tag | first | slugize] }}"  data-toggle="tooltip" data-placement="top" title="" data-original-title="{{ tag[1].size }} posts">{{ tag | first }}</a>
                       </span>
                     {% endfor %}
                 </div>
@@ -146,13 +146,13 @@ layout: default
 
 <script>
 
-    <!-- tooltip on tag cloud -->
+    /* tooltip on tag cloud
     $(function () {
-    $("[data-toggle='tooltip']").tooltip();
+        $("[data-toggle='tooltip']").tooltip();
     });
+    */
 
-
-    <!-- search -->
+    // search
     $(function() {
         $('#search-query').lunrSearch({
             index:    'search/search.json',
@@ -161,6 +161,11 @@ layout: default
             template: '#search-results-template'
         });
     });
+
+
+
+
+
 
 </script>
 
