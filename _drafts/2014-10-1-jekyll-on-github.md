@@ -3,7 +3,6 @@ layout: post
 title: Use of jekyll for github pages
 category: Tools
 tags: jekyll github
-published: false
 summary: Use of jekyll on github pages
 ---
 
