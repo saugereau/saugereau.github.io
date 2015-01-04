@@ -78,7 +78,10 @@ A little vocabulary :
 - A **topic** is a category or feed name to which messages are published. For each topic, the Kafka cluster maintains a partitioned log with one or more partition.
 - The **partitions** of the log are distributed over the servers in the Kafka cluster (Kafka uses ZooKeeper to manage partition) with each server handling data and requests for a share of the partitions. Each partition is replicated across a configurable number of servers for fault tolerance
 
+In this architecture, we need one producer that publish to kafka queue the tweet, and one or more consumer that store the data to Cassandra
+
 Drawbacks
+- Need some installation : Zookeeper (we can use the one embedded with kafka), Kafka
 - I've already use kafka and there is no big challenge
 
 
@@ -99,11 +102,12 @@ A little vocabulary :
 
 Advantages
 - [a storm-starter project](https://github.com/apache/storm/tree/master/examples/storm-starter) 
-- a local mode for test
-- 
+- a local mode for test who doesn't care Zookeeper's installation
+- the storm starter project already contains a TwitterSampleSpout
+- we can introduce some business logic in the bolts (words tokenization, etc ...)
 
 Drawbacks 
-
+- we can't have parallelized twitter spout (this will probably cause duplicate rows in cassandra) 
 
 ## Implementing the solution
 
