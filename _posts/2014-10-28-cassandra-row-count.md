@@ -85,7 +85,7 @@ select count(*) from mysimpletable limit 1000000
 
 ### On a specific node :
 
-Or you could use nodetool, but it's only estimated value
+Or you could use nodetool, but it's only estimated value (this information disappeared in Cassandra 2.1)
 
 ```
 >nodetool cfstats mybeautifulkeyspace
@@ -139,7 +139,7 @@ fi
 
 nodetool flush
 #recuperation de tout les fichiers data correspondant
-for file in `ls /data/cassandra/data/mybeautifulkeyspace/$1/*-$1-jb-*-Data.db`
+for file in `ls /data/cassandra/data/mybeautifulkeyspace/$1/*-$1-*-Data.db`
 do
   echo "operating $file"
   sstablekeys $file >> output.txt
