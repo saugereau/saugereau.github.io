@@ -9,7 +9,7 @@ summary: When you use solr, and query on multiple field, you could have some tro
 I recently encountered a problem on Solr 4.3.1, I can reproduce it based upon the sample collection embedded on the zip archive.
 For your sample, you could download the Solr 4.3.1 version (in archive section), unzip it.
 
-### Prepare the Solr intance
+## Prepare the Solr intance
 
 This distribution comes with a collection1 folder in \solr-4.3.1\example\solr. You could copy/paste this folder and rename in collection2 for instance an do some updates :
 
@@ -73,7 +73,7 @@ This distribution comes with a collection1 folder in \solr-4.3.1\example\solr. Y
 
 ```
 
-### Put the datas
+## Put the datas
 
 I  create a simple xml file to load my datas :
 
@@ -176,7 +176,7 @@ So to import xml file to specific collection
 java -Durl=http://localhost:8983/solr/collection2/update -jar post.jar tenproducts.xml
 ```
 
-### Test it
+## Test it
 
 So if you do a search on "cigogne", you get the document with id 3144876, 1011301 and 3599285, however if you do the search with "les cigognes",
 there's nothing returned instead while there is a document with name "Les cigognes".
@@ -184,7 +184,7 @@ there's nothing returned instead while there is a document with name "Les cigogn
 Name and description are using stop filter on index and query analyser, an example of "les cigognes" both index and query analyser :
 
 <figure>
-  <img src="/blog/assets/images/solr-dismax-stopwords/query_analysis.png" />
+  <img src="/blog/assets/images/solr-dismax-stopwords/query_analysis.png" alt="Solr query analysis screen"/>
   <figcaption>Solr query analysis screen</figcaption>
 </figure>
 

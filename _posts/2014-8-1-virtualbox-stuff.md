@@ -63,7 +63,7 @@ Select the extended partition that contains the swap partition, and then click t
 Now you can resize the /dev/sfa1 partition until this maximum minus the swap space you want to use and create a new extended partition (Extended type) and add in this one a new linux-swap.
  
 <figure>
-  <img src="/blog/assets/images/virtualbox-stuff/gparted_swap.png" />
+  <img src="/blog/assets/images/virtualbox-stuff/gparted_swap.png" alt="Gparted partition screen"/>
   <figcaption>GParted view partitions with swap</figcaption>
 </figure> 
 
@@ -73,7 +73,7 @@ Changes done, you could click on apply and restart your virtual machine.
 It happens on Ubuntu Guest system the error "The system is running in low-graphics mode" when you try to boot your system
 
 <figure>
-  <img src="/blog/assets/images/virtualbox-stuff/ubuntu_low_graphics.png" />
+  <img src="/blog/assets/images/virtualbox-stuff/ubuntu_low_graphics.png" alt="Ubuntu error screen : low-graphics mode"/>
   <figcaption>Error on boot Ubuntu : Low graphics</figcaption>
 </figure> 
 

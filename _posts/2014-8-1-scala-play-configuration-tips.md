@@ -6,6 +6,7 @@ tags: scala play
 summary: Ivy configuration, IDE plugins ...
 ---
 
+## For shell command
 
 ### SBT : change local Ivy repository path
 
@@ -24,18 +25,18 @@ Add the folllowing lines in your %userprofile%\.sbt\plugins\build.sbt
 Add the following line in activator.bat : 
 set SBT_OPTS=-Dsbt.ivy.home="D:\Fichier Development\Ivy-repo"
 
-### Ide plugins
+## Ide plugins
 
-#### Eclipse
+### Eclipse
 
 The url for update site are on [Scala-Ide web site](http://scala-ide.org/download/current.html), there is one plugin per scala version, so the plugin for scala 2.10 will not work for project in 2.11. And you can't have the two plugin version on the same eclipse installation.
 
-#### Intellij
+### Intellij
 The [JetBrain scala plugin](http://confluence.jetbrains.com/display/SCA/Scala+Plugin+for+IntelliJ+IDEA) already include SBT plugin, so you don' have to add another SBT plugin (there is few plugin SBT if you search in plugin repository)
 Once JetBrain Scala plugin installed, you could define a custom sbt launcher :
 
 <figure>
-  <img src="/blog/assets/images/scala-play-configuration-tips/sbt-config.png" />
+  <img src="/blog/assets/images/scala-play-configuration-tips/sbt-config.png" alt="IntelliJ SBT configuration screen"/>
   <figcaption>SBT configuration screen</figcaption>
 </figure> 
 
@@ -43,7 +44,7 @@ But this doesn't allow to parameter the ivy home, and when you open a sbt projec
 An another way is to update VM parameters
  
  <figure>
-   <img src="/blog/assets/images/scala-play-configuration-tips/sbt-jvm-parameters.png" />
+   <img src="/blog/assets/images/scala-play-configuration-tips/sbt-jvm-parameters.png" alt="How to fix Ivy home in SBT"/>
    <figcaption>Jvm parameters</figcaption>
  </figure> 
  
@@ -83,14 +84,14 @@ seq(Revolver.settings: _*)
 
 
  <figure>
-   <img src="/blog/assets/images/scala-play-configuration-tips/project-import.png" />
+   <img src="/blog/assets/images/scala-play-configuration-tips/project-import.png" alt="IntelliJ import SBT project"/>
    <figcaption>SBT project import</figcaption>
  </figure> 
  
  Now if you watch the Project Structure screen :
  
  <figure>
-   <img src="/blog/assets/images/scala-play-configuration-tips/project-structure.png" />
+   <img src="/blog/assets/images/scala-play-configuration-tips/project-structure.png" alt="IntelliJ : import project - scala facet" />
    <figcaption>Project structure - scala facet</figcaption>
  </figure> 
  
@@ -98,7 +99,7 @@ seq(Revolver.settings: _*)
  When you create a new project you could define your scala librairies :
  
  <figure>
-   <img src="/blog/assets/images/scala-play-configuration-tips/new-scala-module.png" />
+   <img src="/blog/assets/images/scala-play-configuration-tips/new-scala-module.png" alt="IntelliJ : create project - scala facet"/>
    <figcaption>Project structure - scala facet</figcaption>
  </figure> 
  
