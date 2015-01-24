@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8" />
     <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
@@ -10,9 +10,9 @@
 
     <meta name="author" content="{{ site.author }}" />
     {% if page.tags %}
-        <meta name="keywords" content=" {{ page.tags | join: ', '}} "/>
+    <meta name="keywords" content=" {{ page.tags | join: ', '}} "/>
     {% else %}
-       <meta name="keywords" content="c#,java,cassandra,architecture,solr,scala"/>
+    <meta name="keywords" content="c#,java,cassandra,architecture,solr,scala"/>
     {% endif %}
     <meta name="description" content="{{ site.description }}"/>
     <meta itemprop="description" content="{{ site.description }}"/>
@@ -22,146 +22,131 @@
 
     <!--[if lt IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
 
-    <!--<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />-->
-    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/bootstrap/css/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/bootstrap/css/bootstrap-theme.min.css" />
-    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/bootstrap/css/sticky-footer-navbar.css" />
+
+
+
+
+    <link rel="stylesheet" href="/assets/vendor/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/vendor/css/jasny-bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/base.css" />
     <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/style.css" />
+    <!--<link rel="stylesheet" href="/assets/css/navmenu-reveal.css">-->
+
+    <script src="/assets/vendor/js/jquery.min.js"></script>
+    <script src="/assets/vendor/js/bootstrap.min.js"></script>
+    <script src="/assets/vendor/js/prettify.min.js"></script>
+    <script src="/assets/vendor/js/jasny-bootstrap.min.js"></script>
 
 
-      <!-- import of Source+Sans+Pro google font see also https://www.google.com/fonts/specimen/Source+Sans+Pro -->
+    <!--
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/bootstrap/css/sticky-footer-navbar.css" />
+    -->
+
+    <!-- import of Source+Sans+Pro google font see also https://www.google.com/fonts/specimen/Source+Sans+Pro -->
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Source+Code+Pro:500|Lato:300|Nunito:700,300' rel='stylesheet' type='text/css'>
 
     <!--<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/articles.css" />-->
-    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/sidr/stylesheets/jquery.sidr.dark.css" />
+
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
     <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
-    <script type="text/javascript" src="/assets/jquery/jquery-1.11.1.min.js"></script>
-    <script type="text/javascript" src="/assets/bootstrap/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="/assets/js/prettify.js"></script>
 
 
-    <script type="text/javascript" src="/assets/js/search.min.js"></script>
+</head>
 
+<body class="article tutorial">
 
-  </head>
+<div class="navmenu navmenu-default navmenu-fixed-left navmenu-inverse">
 
-  <body class="article tutorial">
-
-  <div class="metabar">
-      <div class="metabar-block pull-right">
-          <div class="metabar-text">
-              <a href="http://twitter.com/saugereau33" class="btn btn-default btn-transparent js-social-links" style="font-size:15px"><i class="fa fa-twitter"></i></a>
-          </div>
-      </div>
-  </div>
-
-  <div class="nav-button js-menu-button">
-      <a id="sidebar-button" href="#sidr"><i class="fa fa-bars"></i></a>
-  </div>
-
-  <div id="sidr" style="display:none">
-      <p class="profile">
-
-        <span class="bio">
+     <span class="navmenu-brand">
           Java architect, Developer, Blogger
-        </span>
+     </span>
+
+    <ul class="nav navmenu-nav">
+        <li>
+            <a href="http://saugereau.github.io">
+                <i class="fa fa-home fa-2x"></i> Blog Home
+            </a>
+        </li>
+        <li>
+            <a href="/blog/tags">
+                <i class="fa fa-tags fa-2x"></i> Tags
+            </a>
+        </li>
+        <li>
+            <a href="/about">
+                <i class="fa fa-user fa-2x"></i> About me
+            </a>
+        </li>
+    </ul>
+    <ul class="nav navmenu-nav">
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Projets <b class="caret"></b></a>
+            <ul class="dropdown-menu navmenu-nav">
+                <li><a href="https://github.com/saugereau/KaggleBikeSharing">Kaggle bike sharing</a></li>
+            </ul>
+        </li>
+    </ul>
+    <ul class="nav navmenu-nav social-icons">
+        {% if site.footer-links.email %}<a href="mailto: {{ site.footer-links.email }}"><i class="fa fa-envelope-o fa-3x"></i></a>{% endif %}
+        {% if site.footer-links.github %}<a href="http://github.com/{{ site.footer-links.github }}"><i class="fa fa-github fa-3x"></i></a>{% endif %}
+        {% if site.footer-links.linkedin %}<a href="{{ site.footer-links.linkedin }}"><i class="fa fa-linkedin-square fa-3x"></i></a>{% endif %}
+        {% if site.footer-links.rss %}<a href="{{ site.baseurl }}/feed.xml"><i class="fa fa-rss fa-3x"></i></a>{% endif %}
+        {% if site.footer-links.twitter %}<a href="http://twitter.com/{{ site.footer-links.twitter }}"><i class="fa fa-twitter fa-3x"></i></a>{% endif %}
+        {% if site.footer-links.stackoverflow %}<a href="http://stackoverflow.com/{{ site.footer-links.stackoverflow }}"><i class="fa fa-stack-exchange fa-3x"></i></a>{% endif %}
+    </ul>
+</div>
+
+<div class="canvas">
+
+
+    <div class="navbar navbar-default navbar-fixed-top">
+        <button type="button"  class="navbar-toggle" data-toggle="offcanvas" data-recalc="false" data-target=".navmenu" data-canvas=".canvas">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+
+        </button>
+    </div>
+
+    <div class="metabar">
+        <div class="metabar-block pull-right">
+            <div class="metabar-text">
+                <a href="http://twitter.com/saugereau33" class="btn btn-default btn-transparent js-social-links" style="font-size:15px"><i class="fa fa-twitter"></i></a>
+            </div>
+        </div>
+    </div>
 
 
 
-      </p>
-      <p>
-
-          {% if site.footer-links.email %}<a href="mailto: {{ site.footer-links.email }}">{% include svg-icons/email.html %}</a>{% endif %}
-          {% if site.footer-links.github %}<a href="http://github.com/{{ site.footer-links.github }}">{% include svg-icons/github.html %}</a>{% endif %}
-          {% if site.footer-links.linkedin %}<a href="{{ site.footer-links.linkedin }}">{% include svg-icons/linkedin.html %}</a>{% endif %}
-          {% if site.footer-links.rss %}<a href="{{ site.baseurl }}/feed.xml">{% include svg-icons/rss.html %}</a>{% endif %}
-          {% if site.footer-links.twitter %}<a href="http://twitter.com/{{ site.footer-links.twitter }}">{% include svg-icons/twitter.html %}</a>{% endif %}
-          {% if site.footer-links.stackoverflow %}<a href="http://stackoverflow.com/{{ site.footer-links.stackoverflow }}">{% include svg-icons/stackoverflow.html %}</a>{% endif %}
-
-      </p>
-
-      <ul class="site-nav">
-          <li>
-              <a href="http://saugereau.github.io">
-                  <i class="glyphicon glyphicon-home"></i> Blog Home
-              </a>
-          </li>
-          <li>
-              <a href="/blog/tags">
-                  <i class="glyphicon glyphicon-tags"></i> Tags
-              </a>
-          </li>
-          <li>
-              <a href="/about">
-                  <i class="glyphicon glyphicon-user"></i> About me
-              </a>
-          </li>
-
-      </ul>
-
-  </div>
+    <div class="container">
+        {{ content }}
 
 
-  <div class="js-click-region">
-      {{ content }}
-  </div>
-
-  <script src="/assets/sidr/jquery.sidr.min.js"></script>
-  <script>
-
-      //add needed class in pre tag for prettyprint
-      $("pre").each(function(){
-          var el = $(this);
-          if(el.hasClass("nohighlight") === false){
-              el.addClass("prettyprint");
-          }
-      });
-
-      $(function(){
-          $('#sidebar-button').sidr();
-
-          $('#sidebar-button').tooltip({
-              title: "Click me",
-              placement: 'right'
-          });
-
-
-          $('.js-click-region').click(function(){
-              $('.toc').fadeIn();
-              $.sidr('close');
-          });
-
-
-          $('#sidebar-button').click(function(){
-              if($('.toc').is(':visible') === true){
-                  $('.toc').fadeOut();
-              }else{
-                  $('.toc').fadeIn();
-              }
-
-              try {
-                  ga('send', 'event', 'button', 'click', 'menu-button');
-              } catch(err){}
-          });
-
-          $('.js-rss-btn').click(function(){
-              try {
-                  ga('send', 'event', 'button', 'click', 'rss-button');
-              } catch(err){}
-          });
+    </div>
+</div>
 
 
 
-      });
-      prettyPrint();
-  </script>
 
-  {% include analytics.html %}
-  {% include disqus_comment_count.html %}
-  {% include footer.html %}
-  </body>
+<script>
+
+  //add needed class in pre tag for prettyprint
+  $("pre").each(function(){
+      var el = $(this);
+      if(el.hasClass("nohighlight") === false){
+          el.addClass("prettyprint");
+      }
+  });
+
+
+  prettyPrint();
+</script>
+
+{% include analytics.html %}
+{% include disqus_comment_count.html %}
+{% include footer.html %}
+</body>
 </html>
