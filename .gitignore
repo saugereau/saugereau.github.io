@@ -8,4 +8,3 @@ Gemfile.lock
 node_modules
 bower_components
 package.json
-assets/vendor
