@@ -2,7 +2,7 @@
 layout: post
 title: How to integrate PIG with Cassandra (without DSE)
 category: Tools
-tags: Pig Cassandra
+tags: pig cassandra
 summary: Some configuration tips for use Pig with Cassandra
 ---
 
