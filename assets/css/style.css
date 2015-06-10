@@ -1006,6 +1006,75 @@ ol.linenums li {
     }
     .tag-cloud-10 { font-size: 160%; }
     /* end tag cloud */
+
+
+    /*resume*/
+    #experiences .experience .company-type, #experiences .experience .company-clients {
+        color: #c5c5c5;
+        font-style: italic;
+    }
+
+    .gallery .item {
+        width: 100%;
+        position: relative;
+        margin: 20px 0px;
+    }
+    .gallery .item .date {
+        font-weight: bold;
+        float: left;
+        width: 10%;
+        font-size: 1.3em;
+        padding: 2px 5px 2px 2px;
+        color: #faa732;
+    }
+    .gallery .item .course-title {
+        font-weight: bold;
+        text-align: left;
+        font-size: 1.3em;
+        margin-left: 11%;
+    }
+    .gallery .item .trainig-institute {
+        font-size: 0.8em;
+        padding: 2px 5px 2px 2px;
+        margin: 5px;
+        bottom: 0;
+        text-align: right;
+    }
+
+    .publication .item .date {
+        font-weight: bold;
+        float: left;
+        width: 10%;
+        font-size: 1.3em;
+        padding: 2px 5px 2px 2px;
+        color: #faa732;
+    }
+
+    .publication .item .publication-title {
+        font-weight: bold;
+        text-align: left;
+        font-size: 1.3em;
+        margin-left: 11%;
+    }
+
+    #skills .row {
+        margin-bottom: 20px;
+    }
+
+    #experiences .date {
+        margin: 40px 0 10px 0;
+        text-align: right;
+        font-size: large;
+        color: #faa732;
+    }
+
+    #experiences .job-title {
+        text-align: left;
+        font-size: large;
+        font-weight: bold;
+        color: #000000;
+    }
+    /*end resume*/
 }
 
 

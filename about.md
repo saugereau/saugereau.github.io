@@ -7,7 +7,7 @@ permalink: /about/
 ## Sebastien Augereau
 
 
-I am a software engineer from more than 10 years, meanly on open source and java technology.
+I am a software engineer from more than 11 years, meanly on open source and java technology.
 I live in Bordeaux, France and I worked mainly in IT Services & Software Engineering companies in the banking, energy and e-commerce and currently I work for Cdiscount.
 
 I always liked learning new things, and I follow regularly some MOOC on coursera.
